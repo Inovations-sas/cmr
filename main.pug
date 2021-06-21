@@ -1,31 +1,47 @@
+-var nombre="HEX"
 mixin box-icon(name)
-    box-icon(name=name size="25px")&attributes(attributes)
+    box-icon(name=name color="#262d33" size="25px")&attributes(attributes)
+mixin feature(icono,texto,progreso,color,porcentaje,type)
+    .feature-container
+        .feature-header
+            .feature-info
+                +box-icon(icono,texto)(size="20px")(type=type)
+                span=texto
+            span=progreso
+        .feature-bar
+            .bar(style="background-color:"+ color+";width:"+porcentaje+"%")
+
 doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title HEX
+        title=nombre
         link(rel="stylesheet", href="/styles/mobile.css")
         script(src="https://unpkg.com/boxicons@latest/dist/boxicons.js") 
         link(rel="preconnect", href="https://fonts.gstatic.com")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap")
     body 
         header
-            .header__container 
+            .header__container
                 .menu  
-                    +box-icon("menu","white")
+                    +box-icon("menu")(size="30px")
                 .logo
                     img(src="/img/CRM_logo.svg", alt="logo", srcset="")
-                    span.logo__name EXA
+                    span.logo__name=nombre
                 .searching
                     +box-icon("dots-vertical-rounded")
                     
         main 
-            .nuevos-productos
-            .articulos
-            .oferta 
-            .contacto
+            .summary
+                .feature1
+                    +feature("component","Estado del Proyecto","1/3","gray","30","solid")
+                .feature2 
+                    +feature("task","Resumen de Tareas","15/30","red","50")
+                .feature3 
+                    +feature("user-voice","Proximos Meetings","8/10","green","80")
+                .feature4
+                    +feature("note","Actividades en Pendiente","2/5","blue","40")
         footer 
             .footer__container

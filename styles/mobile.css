@@ -154,6 +154,7 @@
         border-top: solid lightgray 1px;
         font-weight: 500;
         color:rgb(122, 121, 121);
+        /* width: 40rem; */
     }
     .info5{
         display: flex;
@@ -167,4 +168,25 @@
     }
     .info1{
         color: #208de0;
+    }
+
+    .summary_information{
+    display: flex;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type:x proximity;
+    align-items: center;
+    }
+
+    .chart-container{
+        background-color: white;
+        margin: 0 1rem;
+        padding: 1rem 0;
+    }
+    .chart-header{
+        padding: 0 0 0.8rem 1rem;
+        border-bottom: solid lightgray 1px;
+    }
+    .chart-content{
+        margin: 1rem 0 0 0 ;
     }

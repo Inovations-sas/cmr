@@ -51,7 +51,14 @@ html(lang="en")
                             span Mis tareas
                             +box-icon("chevron-down")(type=solid).arrowdown
                         +box-icon("download")
-                    +box-icon("search")(size="20px").lupa
+                    .search-seccion
+                        .search-main.icons    
+                            +box-icon("search")(size="20px").icons-search-bar
+                            input(type="text")(placeholder="  Search...").search-bar
+                        .search-extra-icons
+                            +box-icon("filter-alt")(size="20px").icons-search-bar
+                            +box-icon("refresh")(size="20px").icons-search-bar
+
             
         footer 
             .footer__container

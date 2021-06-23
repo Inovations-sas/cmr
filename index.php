@@ -1,1 +1,1 @@
-<?php include_once("/dist/main.html"); ?>
+<?php include_once("dist/main.html"); ?>

@@ -31,6 +31,15 @@ mixin chart(titulo,chartype)
            span=titulo
         .chart-content
          canvas(id=chartype)
+mixin to-do(titulo,fecha,hora)
+    .to-do
+        .to-do-input
+            input(type="checkbox", name="checkem")
+        .to-do-info
+            span=titulo 
+            span=fecha + " " + hora
+        .todo-icon
+            +box-icon("pencil")(color="white")(size="20px")
 
 doctype html
 html(lang="en")
@@ -97,8 +106,20 @@ html(lang="en")
                                     span Opciones
                             +task("Terminado de Front","2021-06-21","green","2021-06-30","red","Diseño")
                             +task("Terminado de Front","2021-06-21","red","2021-06-30","green","Diseño")
-                .to_do_items   
-                    +chart("Resumen de contribucion","chartContr")
+                            +task("Terminado de Front","2021-06-21","green","2021-06-30","red","Diseño")
+                            +task("Terminado de Front","2021-06-21","red","2021-06-30","green","Diseño")
+                .to_do_items
+                    .to-do-container
+                        .to-do-header
+                            span Mi lista de pendientes
+                        .to-do-uptodate
+                            span.to-do-title1 Ultimos Pendientes
+                            .uptodate-list
+                                +to-do("Reunion con cliente","2021-06-30","12:45")
+                        .to-do-finished
+                            span.to-do-title2 Pendientes finalizados
+                            .finished-list
+                +chart("Resumen de contribucion","chartContr")
             
         footer 
             .footer__container

@@ -1,5 +1,6 @@
 :root{
-    --main-font-color:#505754;
+    --main-font-color:#717774;
+    --secondary-font-color:#8d9491;
     --main-logo-color-primary:#262d33;
 }
 *{
@@ -154,7 +155,7 @@
         border-top: solid lightgray 1px;
         font-weight: 500;
         color:rgb(122, 121, 121);
-        /* width: 40rem; */
+        width: 40rem;
     }
     .info5{
         display: flex;
@@ -178,15 +179,71 @@
     align-items: center;
     }
 
-    .chart-container{
+    .chart-container,.to-do-container{
         background-color: white;
-        margin: 0 1rem;
+        margin: 1rem;
         padding: 1rem 0;
     }
-    .chart-header{
+    .chart-header,.to-do-header{
         padding: 0 0 0.8rem 1rem;
         border-bottom: solid lightgray 1px;
+        font-weight: 500;
+        color:rgb(59, 57, 57);
     }
     .chart-content{
         margin: 1rem 0 0 0 ;
+    }
+    .to-do-uptodate,.to-do-finished{
+        padding: 0 0 0 1rem;
+        margin: 1.5rem 0;
+        font-weight: 500;
+    }
+    .to-do-title1{
+        color: rgb(255, 205, 86);
+    }
+    
+    .to-do-title2{
+        color: rgb(75, 192, 192);
+    }
+
+    .to-do{
+        display: grid;
+        grid-template-columns: 1fr 10fr 3fr;
+        grid-gap: 8px;
+        align-items: center;
+        margin: 1rem 0;
+    }
+    .todo-icon{
+        background-color: orange;
+    }
+    .to-do>div>input{
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+    .to-do-info{
+        display: flex;
+        flex-direction: column;
+    }
+    .to-do-info span:nth-child(1){
+        font-size: 17px;
+        color: var(--main-font-color);
+    }
+    
+    .to-do-info span:nth-child(2){
+        padding: 0.5rem 0 0 0;
+        font-size: 11px;
+        color:var(--secondary-font-color)
+    }
+
+    .to-do-input{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0 0 18px 0;
+    }
+    .todo-icon{
+        display: flex;
+        justify-content: center;
+        margin: 1rem;
+        padding: 0.3rem;
     }

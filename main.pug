@@ -10,6 +10,21 @@ mixin feature(icono,texto,progreso,color,porcentaje,type)
             span=progreso
         .feature-bar
             .bar(style="background-color:"+ color+";width:"+porcentaje+"%")
+mixin task(nombre,inicio,estadoinicio,cierre,estadocierre,tags)
+                            .task
+                                .info1
+                                    span=nombre
+                                .info2(style="color:"+ estadoinicio)
+                                    span=inicio
+                                .info3(style="color:"+ estadocierre)
+                                    span=cierre
+                                .info4
+                                    span=tags
+                                .info5
+                                    .info-icon-1
+                                        +box-icon("time-five")(color="white")(size="20px")
+                                    .info-icon-2
+                                        +box-icon("pencil")(color="white")(size="20px")
 
 doctype html
 html(lang="en")
@@ -51,13 +66,28 @@ html(lang="en")
                             span Mis tareas
                             +box-icon("chevron-down")(type=solid).arrowdown
                         +box-icon("download")
-                    .search-seccion
+                    .search_seccion
                         .search-main.icons    
                             +box-icon("search")(size="20px").icons-search-bar
                             input(type="text")(placeholder="  Search...").search-bar
                         .search-extra-icons
                             +box-icon("filter-alt")(size="20px").icons-search-bar
                             +box-icon("refresh")(size="20px").icons-search-bar
+                    .summary_information
+                        .summary-information-header
+                            .summary-information-header-table
+                                .information-header1
+                                    span Nombre
+                                .information-header2
+                                    span Inicio
+                                .information-header3
+                                    span Cierre
+                                .information-header4
+                                    span Tags
+                                .information-header5
+                                    span Opciones
+                            +task("Terminado de Front","2021-06-21","green","2021-06-30","red","Diseño")
+                            +task("Terminado de Front","2021-06-21","red","2021-06-30","green","Diseño")
 
             
         footer 

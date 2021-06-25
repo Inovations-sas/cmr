@@ -9,7 +9,7 @@ mixin feature(icono,texto,progreso,color,porcentaje,type)
                 span=texto
             span=progreso
         .feature-bar
-            .bar(style="background-color:"+ color+";width:"+porcentaje+"%")
+            .bar(style=`background-color:${color}; width:${porcentaje}%`)
 mixin task(nombre,inicio,estadoinicio,cierre,estadocierre,tags)
     .task
         .info1
@@ -52,7 +52,9 @@ html(lang="en")
         script(src="https://unpkg.com/boxicons@latest/dist/boxicons.js")
         script(src="https://code.jquery.com/jquery-3.6.0.min.js",integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=",crossorigin="anonymous") 
         script(src="https://cdn.jsdelivr.net/npm/chart.js")
-        script(src="/app.js",defer)
+        script(src="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.css")
+        script(src="/js/app.js",defer)(type="module") 
         link(rel="preconnect", href="https://fonts.gstatic.com")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap")
     body 
@@ -107,7 +109,8 @@ html(lang="en")
                             +task("Terminado de Front","2021-06-21","green","2021-06-30","red","Diseño")
                             +task("Terminado de Front","2021-06-21","red","2021-06-30","green","Diseño")
                             +task("Terminado de Front","2021-06-21","green","2021-06-30","red","Diseño")
-                            +task("Terminado de Front","2021-06-21","red","2021-06-30","green","Diseño")
+                            +task(`liquid numquam nihil.`,"2021-06-21","red","2021-06-30","green","Diseño")
+                .calendar-full(id="calendar")
                 .to_do_items
                     .to-do-container
                         .to-do-header

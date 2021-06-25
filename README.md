@@ -8,10 +8,12 @@ _Cojunto de modulos pensados para la administración de los requisitos del clien
 _CCS:_
 
 * [TailwindCSS](https://tailwindcss.com/) - Framework para el diseño agíl.
+* [PugJs](https://pugjs.org/api/getting-started.html) - Pre-procesador para la creación y manejo de elementos HTML.
 
 _JS:_
 
-* [Angular](https://angular.io/) - Framework para la implementacion de componentes reactividad.
+* [Angular](https://angular.io/) - Framework para la implementacion de componentes con reactividad.
+* [Chart.js](https://www.chartjs.org/) - Libreria para la implementacion de graficos y estadisticas.
 
 _Gestor de Paquetes:_
 

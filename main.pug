@@ -10,13 +10,16 @@ mixin feature(icono,texto,progreso,color,porcentaje,type)
             span=progreso
         .feature-bar
             .bar(style=`background-color:${color}; width:${porcentaje}%`)
-mixin task(nombre,inicio,estadoinicio,cierre,estadocierre,tags)
+mixin task(nombre,inicio,cierre,estadocierre,tags)
     .task
+        
+        
         .info1
+            +box-icon("circle")(color=estadocierre)(size="20px")(type="solid")
             span=nombre
-        .info2(style="color:"+ estadoinicio)
+        .info2
             span=inicio
-        .info3(style="color:"+ estadocierre)
+        .info3(style=`color: ${estadocierre}`)
             span=cierre
         .info4
             span=tags
@@ -106,10 +109,11 @@ html(lang="en")
                                     span Tags
                                 .information-header5
                                     span Opciones
-                            +task("Terminado de Front","2021-06-21","green","2021-06-30","red","Diseño")
-                            +task("Terminado de Front","2021-06-21","red","2021-06-30","green","Diseño")
-                            +task("Terminado de Front","2021-06-21","green","2021-06-30","red","Diseño")
-                            +task(`liquid numquam nihil.`,"2021-06-21","red","2021-06-30","green","Diseño")
+                            +task("Terminado de Front","2021-06-21","2021-06-30","red","Diseño")
+                            +task("Terminado de Front","2021-06-21","2021-06-30","green","Diseño")
+                            +task("Terminado de Front","2021-06-21","2021-06-30","red","Diseño")
+                            +task(`liquid numquam nihil.`,"2021-06-21","2021-06-30","green","Diseño")
+                            //- (nombre,inicio,cierre,estadocierre,tags,color)
                 .calendar-full(id="calendar")
                 .to_do_items
                     .to-do-container
@@ -122,6 +126,7 @@ html(lang="en")
                         .to-do-finished
                             span.to-do-title2 Pendientes finalizados
                             .finished-list
+                +chart("Resumen de proyectos","chartPro")
                 +chart("Resumen de contribucion","chartContr")
             
         footer 

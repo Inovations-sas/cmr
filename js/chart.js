@@ -1,9 +1,12 @@
-const data = {
+const value= (lenght,values)=>{
+  return Array.from({length: lenght}, () => Math.floor(Math.random() * values));
+}
+const datadona = {
     labels: ['Rojo', 'Naranja', 'Amarillo', 'Verde', 'Azul'],
     datasets: [
       {
         label: 'Dataset 1',
-        data: [5,20,30,10,11],
+        data: value(5,60),
         backgroundColor:[
           'rgb(255, 99, 132)',
           'rgb(255, 159, 64)',
@@ -14,11 +17,46 @@ const data = {
       }
     ]
   };
+
+  const barlabels=[
+  'Enero',
+  'Febrero',
+  'Marzoh',
+  'Abril',
+  'Mayo',
+  'Junio',
+  'Julio',
+  'Agosto',
+  'Septiembre',
+  'Octubre',
+  'Noviembre',
+  'Diciembre'
+  ]
+
+ 
+
+  const databar={
+    labels: barlabels,
+  datasets: [
+    {
+      label: 'Proyecto 1',
+      data: value(12,40),
+      borderColor: '#ff638598',
+      backgroundColor: 'rgb(255, 99, 132)',
+    },
+    {
+      label: 'Proyecto 2',
+      data: value(12,40),
+      borderColor: '#36a3ebaf',
+      backgroundColor: '#36a2eb',
+    }
+  ]
+  }
   
-  var chartdona=document.getElementById("chartContr");
-  var chartContr= new Chart(chartdona, {
+  var chartdona=document.getElementById("chartPro");
+  var chartPro= new Chart(chartdona, {
       type: 'doughnut',
-      data: data,
+      data: datadona,
       options: {
         responsive: true,
         plugins: {
@@ -27,10 +65,37 @@ const data = {
           },
           title: {
             display: true,
-            text: 'Contribucion de Actividades'
+            text: 'Contribucion a Proyectos'
           }
         }
       },
     });
   
-  export {chartdona, chartContr,data};
+    var chartbar=document.getElementById("chartContr");
+    var chartContr= new Chart(chartbar, {
+        type: 'bar',
+        data: databar,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Contribucion de Actividades'
+            }
+          }
+        },
+      });
+
+
+
+
+
+
+export {chartdona, chartPro,chartbar,chartContr, datadona};
+
+
+
+

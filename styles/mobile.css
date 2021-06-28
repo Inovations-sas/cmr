@@ -169,6 +169,12 @@
     }
     .info1{
         color: #208de0;
+        display: flex;
+        align-items: center;
+    }
+
+    .info1>box-icon{
+        padding: 0 0.5rem 0 0;
     }
 
     .summary_information{

@@ -37,9 +37,9 @@ var databar = {
     backgroundColor: '#36a2eb'
   }]
 };
-var chartdona = document.getElementById("chartPro");
+var chartdona = document.getElementById("chartContr");
 exports.chartdona = chartdona;
-var chartPro = new Chart(chartdona, {
+var chartContr = new Chart(chartdona, {
   type: 'doughnut',
   data: datadona,
   options: {
@@ -50,15 +50,15 @@ var chartPro = new Chart(chartdona, {
       },
       title: {
         display: true,
-        text: 'Contribucion a Proyectos'
+        text: 'Contribucion a Actividades'
       }
     }
   }
 });
-exports.chartPro = chartPro;
-var chartbar = document.getElementById("chartContr");
+exports.chartContr = chartContr;
+var chartbar = document.getElementById("chartPro");
 exports.chartbar = chartbar;
-var chartContr = new Chart(chartbar, {
+var chartPro = new Chart(chartbar, {
   type: 'bar',
   data: databar,
   options: {
@@ -69,9 +69,9 @@ var chartContr = new Chart(chartbar, {
       },
       title: {
         display: true,
-        text: 'Contribucion de Actividades'
+        text: 'Contribucion de Proyectos'
       }
     }
   }
 });
-exports.chartContr = chartContr;
+exports.chartPro = chartPro;

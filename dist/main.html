@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HEX</title>
     <link rel="stylesheet" href="/styles/mobile.css">
+    <link rel="stylesheet" href="/styles/tablet.css" media="(min-width: 768px">
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"> </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -174,37 +175,49 @@
           </div>
         </div>
         <div class="calendar-full" id="calendar"></div>
-        <div class="to_do_items">
-          <div class="to-do-container">
-            <div class="to-do-header"><span>Mi lista de pendientes</span></div>
-            <div class="to-do-uptodate"><span class="to-do-title1">Ultimos Pendientes</span>
-              <div class="uptodate-list">
-                <div class="to-do">
-                  <div class="to-do-input">
-                    <input type="checkbox" name="checkem"/>
+        <div class="column">
+          <div class="to_do_items">
+            <div class="to-do-container">
+              <div class="to-do-header"><span>Mi lista de pendientes</span></div>
+              <div class="to-do-uptodate"><span class="to-do-title1">Ultimos Pendientes</span>
+                <div class="uptodate-list">
+                  <div class="to-do">
+                    <div class="to-do-input">
+                      <input type="checkbox" name="checkem"/>
+                    </div>
+                    <div class="to-do-info"><span>Reunion con cliente</span><span>2021-06-30 12:45</span></div>
+                    <div class="todo-icon">
+                      <box-icon name="pencil" color="white" size="20px"></box-icon>
+                    </div>
                   </div>
-                  <div class="to-do-info"><span>Reunion con cliente</span><span>2021-06-30 12:45</span></div>
-                  <div class="todo-icon">
-                    <box-icon name="pencil" color="white" size="20px"></box-icon>
+                </div>
+              </div>
+              <div class="to-do-finished"><span class="to-do-title2">Pendientes finalizados</span>
+                <div class="finished-list">
+                  <div class="finish">
+                    <div class="finish-check">
+                      <box-icon name="checkbox-checked" color="black" size="35px" type="solid"></box-icon>
+                    </div>
+                    <div class="to-do-info"><span>Reunion con Jefe</span><span>2021-06-30 12:45</span></div>
+                    <div class="finish-icon">
+                      <box-icon name="info-circle" color="gray" size="30px"></box-icon>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="to-do-finished"><span class="to-do-title2">Pendientes finalizados</span>
-              <div class="finished-list"></div>
+          </div>
+          <div class="chart-container">
+            <div class="chart-header"><span>Resumen de Contribucion</span></div>
+            <div class="chart-content">
+              <canvas id="chartContr"></canvas>
             </div>
           </div>
-        </div>
-        <div class="chart-container">
-          <div class="chart-header"><span>Resumen de proyectos</span></div>
-          <div class="chart-content">
-            <canvas id="chartPro"></canvas>
-          </div>
-        </div>
-        <div class="chart-container">
-          <div class="chart-header"><span>Resumen de contribucion</span></div>
-          <div class="chart-content">
-            <canvas id="chartContr"></canvas>
+          <div class="chart-container">
+            <div class="chart-header"><span>Resumen de Proyectos</span></div>
+            <div class="chart-content">
+              <canvas id="chartPro"></canvas>
+            </div>
           </div>
         </div>
       </div>

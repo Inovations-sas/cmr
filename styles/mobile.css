@@ -220,11 +220,16 @@
         grid-gap: 8px;
         align-items: center;
         margin: 1rem 0;
-        
     }
-    .todo-icon{
-        background-color: orange;
+
+    .finish{
+        display: grid;
+        grid-template-columns:  1fr 10fr 3fr;
+        grid-gap: 8px;
+        align-items: center;
+        margin: 1rem 0;
     }
+
     .to-do>div>input{
         height: 1.2rem;
         width: 1.2rem;
@@ -248,15 +253,27 @@
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
-        padding: 0 0 18px 0;
+        padding: 0 0 18px 5px;
     }
     .todo-icon{
         display: flex;
         justify-content: center;
         margin: 1rem;
         padding: 0.3rem;
+        background-color: orange;
     }
 
+    .finish-check{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .finish-icon{
+        display: flex;
+        justify-content: center;
+        margin: 1rem;
+        padding: 0.3rem;
+    }
     .calendar-full{
         margin:  0 1rem;
         height: 526px;

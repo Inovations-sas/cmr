@@ -53,8 +53,8 @@ const datadona = {
   ]
   }
   
-  var chartdona=document.getElementById("chartPro");
-  var chartPro= new Chart(chartdona, {
+  var chartdona=document.getElementById("chartContr");
+  var chartContr= new Chart(chartdona, {
       type: 'doughnut',
       data: datadona,
       options: {
@@ -65,14 +65,14 @@ const datadona = {
           },
           title: {
             display: true,
-            text: 'Contribucion a Proyectos'
+            text: 'Contribucion a Actividades'
           }
         }
       },
     });
   
-    var chartbar=document.getElementById("chartContr");
-    var chartContr= new Chart(chartbar, {
+    var chartbar=document.getElementById("chartPro");
+    var chartPro= new Chart(chartbar, {
         type: 'bar',
         data: databar,
         options: {
@@ -83,7 +83,7 @@ const datadona = {
             },
             title: {
               display: true,
-              text: 'Contribucion de Actividades'
+              text: 'Contribucion de Proyectos'
             }
           }
         },

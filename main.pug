@@ -40,9 +40,19 @@ mixin to-do(titulo,fecha,hora)
             input(type="checkbox", name="checkem")
         .to-do-info
             span=titulo 
-            span=fecha + " " + hora
+            span=`${fecha} ${hora}`
         .todo-icon
             +box-icon("pencil")(color="white")(size="20px")
+
+mixin finish(titulo,fecha,hora)
+    .finish
+        .finish-check
+            +box-icon("checkbox-checked")(color="black")(size="35px")(type="solid")
+        .to-do-info
+            span=titulo 
+            span=`${fecha} ${hora}`
+        .finish-icon
+            +box-icon("info-circle")(color="gray")(size="30px")
 
 doctype html
 html(lang="en")
@@ -52,6 +62,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title=nombre
         link(rel="stylesheet", href="/styles/mobile.css")
+        link(rel="stylesheet", href="/styles/tablet.css",media="(min-width: 768px")
         script(src="https://unpkg.com/boxicons@latest/dist/boxicons.js")
         script(src="https://code.jquery.com/jquery-3.6.0.min.js",integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=",crossorigin="anonymous") 
         script(src="https://cdn.jsdelivr.net/npm/chart.js")
@@ -113,21 +124,22 @@ html(lang="en")
                             +task("Terminado de Front","2021-06-21","2021-06-30","green","Diseño")
                             +task("Terminado de Front","2021-06-21","2021-06-30","red","Diseño")
                             +task(`liquid numquam nihil.`,"2021-06-21","2021-06-30","green","Diseño")
-                            //- (nombre,inicio,cierre,estadocierre,tags,color)
                 .calendar-full(id="calendar")
-                .to_do_items
-                    .to-do-container
-                        .to-do-header
-                            span Mi lista de pendientes
-                        .to-do-uptodate
-                            span.to-do-title1 Ultimos Pendientes
-                            .uptodate-list
-                                +to-do("Reunion con cliente","2021-06-30","12:45")
-                        .to-do-finished
-                            span.to-do-title2 Pendientes finalizados
-                            .finished-list
-                +chart("Resumen de proyectos","chartPro")
-                +chart("Resumen de contribucion","chartContr")
+                .column
+                    .to_do_items
+                        .to-do-container
+                            .to-do-header
+                                span Mi lista de pendientes
+                            .to-do-uptodate
+                                span.to-do-title1 Ultimos Pendientes
+                                .uptodate-list
+                                    +to-do("Reunion con cliente","2021-06-30","12:45")
+                            .to-do-finished
+                                span.to-do-title2 Pendientes finalizados
+                                .finished-list
+                                    +finish("Reunion con Jefe","2021-06-30","12:45")
+                    +chart("Resumen de Contribucion","chartContr")
+                    +chart("Resumen de Proyectos","chartPro")
             
         footer 
             .footer__container
